@@ -58,11 +58,12 @@
     function makeCoffee(){
         coffeeImage.setAttribute('src', 'static/coffee_machine.jpg');
         setTimeout(function(){
-            coffeeImage.setAttribute('src', 'static/coffee_mug.jpg')
+            coffeeImage.setAttribute('src', 'static/coffee_mug.jpg');
+            setTimeout(function(){
+                coffeeImage.setAttribute('src', 'static/coffee_beans.jpg')
+            }, 2500);
         }, 1500);
-        // setTimeout(function(){
-        //     coffeeImage.setAttribute('src', 'static/coffee_beans.jpg')
-        // }, 4000);
+
 
    }
 
