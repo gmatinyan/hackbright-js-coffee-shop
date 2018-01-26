@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Raleway" >
     <!-- Our CSS -->
     <link rel="stylesheet" href="static/coffee.css">
+    <!--JQuery link  -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 </head>
 <body>
 <div class="container">
@@ -51,23 +53,41 @@
     let coffeeImage;
     let revenueMessage;
 
-    coffeeImage = document.querySelector("#coffee-image")
-    let oldSrc = coffeeImage.getAttribute('src')
-    coffeeImage.setAttribute('src', 'static/coffee_beans.jpg')
+   //  coffeeImage = document.querySelector("#coffee-image")
+   //  let oldSrc = coffeeImage.getAttribute('src')
+   //  coffeeImage.setAttribute('src', 'static/coffee_beans.jpg')
+
+   //  function makeCoffee(){
+   //      coffeeImage.setAttribute('src', 'static/coffee_machine.jpg');
+   //      setTimeout(function(){
+   //          coffeeImage.setAttribute('src', 'static/coffee_mug.jpg');
+   //          setTimeout(function(){
+   //              coffeeImage.setAttribute('src', 'static/coffee_beans.jpg')
+   //          }, 2500);
+   //      }, 1500);
+
+
+   // }
+
+   // coffeeImage.addEventListener('click', makeCoffee)
+
+
+// SAME CODE, but with JQuery
+    $("#coffee-image").attr('src', 'static/coffee_beans.jpg')
 
     function makeCoffee(){
-        coffeeImage.setAttribute('src', 'static/coffee_machine.jpg');
+        $("#coffee-image").attr('src', 'static/coffee_machine.jpg');
         setTimeout(function(){
-            coffeeImage.setAttribute('src', 'static/coffee_mug.jpg');
+            $("#coffee-image").attr('src', 'static/coffee_mug.jpg');
             setTimeout(function(){
-                coffeeImage.setAttribute('src', 'static/coffee_beans.jpg')
+                $("#coffee-image").attr('src', 'static/coffee_beans.jpg')
             }, 2500);
         }, 1500);
+    }
 
 
-   }
 
-   coffeeImage.addEventListener('click', makeCoffee)
+   $("#coffee-image").on('click', makeCoffee)
 
     // use this JavaScript object in further study step
 
