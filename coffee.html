@@ -77,14 +77,13 @@
 
     function makeCoffee(){
         $("#coffee-image").attr('src', 'static/coffee_machine.jpg');
-        setTimeout(function(){
-            $("#coffee-image").attr('src', 'static/coffee_mug.jpg');
-            setTimeout(function(){
-                $("#coffee-image").attr('src', 'static/coffee_beans.jpg')
-            }, 2500);
-        }, 1500);
-    }
 
+        setTimeout(() => {$("#coffee-image").attr('src', 'static/coffee_mug.jpg');
+                          setTimeout(() => $("#coffee-image").attr('src', 'static/coffee_beans.jpg'),
+                                     2500);},
+                   1500);
+    }
+// can we nest a function in an arrow function?
 
 
    $("#coffee-image").on('click', makeCoffee)
@@ -103,3 +102,5 @@
 
 </body>
 </html>
+
+
