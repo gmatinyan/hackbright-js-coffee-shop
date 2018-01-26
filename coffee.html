@@ -52,6 +52,7 @@
 
     let coffeeImage;
     let revenueMessage;
+    let drinksOrder = [];
 
    //  coffeeImage = document.querySelector("#coffee-image")
    //  let oldSrc = coffeeImage.getAttribute('src')
@@ -75,7 +76,10 @@
 // SAME CODE, but with JQuery
     $("#coffee-image").attr('src', 'static/coffee_beans.jpg')
 
-    function makeCoffee(){
+    function makeCoffee(drinkType){
+        // drinksOrder = []
+        drinksOrder.push(drinkType)
+        console.log(drinksOrder)
         $("#coffee-image").attr('src', 'static/coffee_machine.jpg');
 
         setTimeout(() => {$("#coffee-image").attr('src', 'static/coffee_mug.jpg');
@@ -86,7 +90,7 @@
 // can we nest a function in an arrow function?
 
 
-   $("#coffee-image").on('click', makeCoffee)
+   $("#coffee-image").on('click', function() { makeCoffee("brew"); });
 
     // use this JavaScript object in further study step
 
